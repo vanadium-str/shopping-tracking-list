@@ -74,4 +74,13 @@ export const items: Item[] = [
     deliveryEstimationDate: faker.date.recent({ days: 30 }),
     received: true,
   },
+  {
+    id: faker.database.mongodbObjectId(),
+    name: faker.commerce.productName(),
+    image: faker.image.avatar(),
+    store: 'eBay',
+    price: faker.commerce.price({ min: 10, max: 2000, dec: 0 }),
+    deliveryEstimationDate: faker.date.recent({ days: 30 }),
+    received: true,
+  },
 ]
