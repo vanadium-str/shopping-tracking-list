@@ -1,0 +1,92 @@
+[
+  {
+    "id": "adaba0b98baac803decde2cd",
+    "name": "Handcrafted Fresh Soap",
+    "image": "https://avatars.githubusercontent.com/u/27551608",
+    "store": "Amazon",
+    "price": "113",
+    "deliveryEstimationDate": "2024-09-27T07:29:01.384Z",
+    "received": false
+  },
+  {
+    "id": "cf3dc70dd7999eba9c8bed7a",
+    "name": "Tasty Soft Soap",
+    "image": "https://avatars.githubusercontent.com/u/8333421",
+    "store": "Amazon",
+    "price": "1473",
+    "deliveryEstimationDate": "2024-09-24T13:11:53.440Z",
+    "received": false
+  },
+  {
+    "id": "c97e0f0baa4e888f2e3cbab3",
+    "name": "Refined Metal Computer",
+    "image": "https://avatars.githubusercontent.com/u/87103675",
+    "store": "eBay",
+    "price": "1364",
+    "deliveryEstimationDate": "2024-09-17T14:11:41.844Z",
+    "received": false
+  },
+  {
+    "id": "9acbad7a2187b676ea1a7ae7",
+    "name": "Elegant Concrete Chicken",
+    "image": "https://avatars.githubusercontent.com/u/88530687",
+    "store": "eBay",
+    "price": "1073",
+    "deliveryEstimationDate": "2024-09-16T19:03:28.527Z",
+    "received": false
+  },
+  {
+    "id": "eb7a2e4bd2e5ac4ea218c69b",
+    "name": "Tasty Rubber Gloves",
+    "image": "https://avatars.githubusercontent.com/u/14750605",
+    "store": "Amazon",
+    "price": "14",
+    "deliveryEstimationDate": "2024-10-03T06:35:24.684Z",
+    "received": true
+  },
+  {
+    "id": "afb92dfad14d2b6e3b9fde72",
+    "name": "Oriental Fresh Bike",
+    "image": "https://avatars.githubusercontent.com/u/81701923",
+    "store": "eBay",
+    "price": "1751",
+    "deliveryEstimationDate": "2024-10-05T16:33:19.888Z",
+    "received": false
+  },
+  {
+    "id": "6eee15dadbac09bbff8336dc",
+    "name": "Licensed Concrete Hat",
+    "image": "https://avatars.githubusercontent.com/u/75422711",
+    "store": "eBay",
+    "price": "18",
+    "deliveryEstimationDate": "2024-10-06T03:31:41.841Z",
+    "received": true
+  },
+  {
+    "id": "ea15feaaf13e1dee98cb3602",
+    "name": "Fantastic Steel Mouse",
+    "image": "https://avatars.githubusercontent.com/u/25214664",
+    "store": "Amazon",
+    "price": "1322",
+    "deliveryEstimationDate": "2024-09-22T11:28:16.645Z",
+    "received": true
+  },
+  {
+    "id": "1db1aabf66b3acefdea4e5dc",
+    "name": "Oriental Rubber Chair",
+    "image": "https://avatars.githubusercontent.com/u/71435124",
+    "store": "eBay",
+    "price": "348",
+    "deliveryEstimationDate": "2024-09-29T11:20:52.742Z",
+    "received": false
+  },
+  {
+    "id": "a8d308beacf986efb51dfda5",
+    "name": "Handcrafted Granite Fish",
+    "image": "https://avatars.githubusercontent.com/u/52728036",
+    "store": "Amazon",
+    "price": "578",
+    "deliveryEstimationDate": "2024-09-11T03:45:20.152Z",
+    "received": false
+  }
+]

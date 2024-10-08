@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './pages/ErrorPage';
 import BoughtItems from './pages/BoughtItems';
 import ReceivedList from './pages/ReceivedList';
-import { items } from './utils/items';
 import Layout from './components/Layout';
 
 const root = ReactDOM.createRoot(
@@ -30,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         index: true,
-        element: <div className="text-3xl font-bold underline">Hello world!</div>,
+        element: <div>Hello world!</div>,
       },
     ],
   },

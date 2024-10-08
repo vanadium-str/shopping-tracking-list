@@ -4,6 +4,11 @@ export type Item = {
   image: string;
   store: string;
   price: string;
-  deliveryEstimationDate: Date,
+  deliveryEstimationDate: string | Date,
   received: boolean,
+}
+
+export enum TabNames {
+  Items = 'items',
+  Store = 'store',
 }

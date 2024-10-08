@@ -6,7 +6,7 @@ type Props = {
 
 const ItemCard = (props: Props) => {
   const { item } = props;
-  const formattedDate = item.deliveryEstimationDate.toLocaleDateString('en-GB');
+  const formattedDate = new Date(item.deliveryEstimationDate).toLocaleDateString('en-GB');
 
   return (
     <div className="bg-white w-60 h-60 flex flex-col p-3 m-3">
