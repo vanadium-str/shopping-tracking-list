@@ -6,6 +6,7 @@ import ErrorPage from './pages/ErrorPage';
 import BoughtItems from './pages/BoughtItems';
 import ReceivedList from './pages/ReceivedList';
 import Layout from './components/Layout';
+import { Routes } from './types';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -20,11 +21,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "list",
+        path: Routes.List,
         element: <BoughtItems />,
       },
       {
-        path: "received",
+        path: Routes.Received,
         element: <ReceivedList />,
       },
       {

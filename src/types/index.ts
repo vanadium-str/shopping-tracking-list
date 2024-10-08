@@ -12,3 +12,8 @@ export enum TabNames {
   Items = 'items',
   Store = 'store',
 }
+
+export enum Routes {
+  List = 'list',
+  Received = 'received',
+}
