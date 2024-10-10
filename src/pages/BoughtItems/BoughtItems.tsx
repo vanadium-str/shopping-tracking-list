@@ -1,26 +1,33 @@
 import { useOutletContext } from 'react-router-dom';
-import ItemCard from '../../components/ItemCard';
-import items from "../../db/items.json";
+import items from '../../db/items.json';
 import { TabNames } from '../../types';
+import ItemCard from '../../components/ItemCard';
+import StoresTable from '../../components/StoresTable';
 
 const BoughtItems = () => {
   const { activeTab } = useOutletContext<{ activeTab: TabNames }>();
 
   const filteredItems = items
     .filter((item) => !item.received)
-    .sort((a, b) => new Date(a.deliveryEstimationDate).getTime() - new Date(b.deliveryEstimationDate).getTime());
+    .sort(
+      (a, b) =>
+        new Date(a.deliveryEstimationDate).getTime() - new Date(b.deliveryEstimationDate).getTime()
+    );
 
-  return (
-    <div className="px-6 py-3 flex flex-wrap items-center">
-      {activeTab === TabNames.Items && filteredItems.map((item, key) => (
-        <ItemCard
-          key={key}
-          item={item}
-          withReceivedButton
-        />
-      ))}
-    </div>
-  );
+  switch (activeTab) {
+    case TabNames.Items:
+      return (
+        <div className="px-6 py-3 flex flex-wrap items-center">
+          {filteredItems.map((item) => (
+            <ItemCard key={item.id} item={item} withReceivedButton />
+          ))}
+        </div>
+      );
+    case TabNames.Store:
+      return <StoresTable items={items} />;
+    default:
+      return null;
+  }
 };
 
 export default BoughtItems;

@@ -1,5 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
-import { Routes } from "../../types";
+import { Link, useLocation } from 'react-router-dom';
+import { Routes } from '../../types';
 
 const SideBar = () => {
   const location = useLocation();
@@ -7,23 +7,27 @@ const SideBar = () => {
   const isReceived = location.pathname === `/${Routes.Received}`;
 
   return (
-    <div className="w-44 h-screen bg-slate-300 flex flex-col items-center pt-10 flex-none">
+    <div className="w-36 h-screen bg-slate-300 flex flex-col items-center pt-10 flex-none">
       <ul>
-        <li className={`
+        <li
+          className={`
           my-4 font-semibold 
           ${isList && 'text-gray-600 border-b-2 border-solid border-blue-500'}
-        `}>
+        `}
+        >
           <Link to="/list">Bought Items</Link>
         </li>
-        <li className={`
+        <li
+          className={`
           my-4 font-semibold 
           ${isReceived && 'text-gray-600 border-b-2 border-solid border-blue-500'}
-        `}>
+        `}
+        >
           <Link to="/received">Received List</Link>
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default SideBar;

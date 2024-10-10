@@ -2,7 +2,7 @@ type Props = {
   name: string;
   isActive: boolean;
   handleClick(): void;
-}
+};
 
 const Tab = (props: Props) => {
   const { name, isActive } = props;
@@ -17,7 +17,7 @@ const Tab = (props: Props) => {
     >
       {name}
     </div>
-  )
-}
+  );
+};
 
 export default Tab;

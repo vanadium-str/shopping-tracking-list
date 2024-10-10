@@ -5,3 +5,8 @@
 body {
   background-color: rgb(226, 228, 232);
 }
+
+table {
+  border-collapse:separate; 
+  border-spacing: 1em;
+}
