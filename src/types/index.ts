@@ -17,3 +17,13 @@ export enum Routes {
   List = 'list',
   Received = 'received',
 }
+
+export type RatesAPI = {
+  rates: Rates;
+  error: string;
+}
+
+type Rates = {
+  USD: number;
+  ILS: number;
+}

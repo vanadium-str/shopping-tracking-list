@@ -1,4 +1,8 @@
-import { Item } from '../../types';
+import { useEffect, useState } from 'react';
+import { Item, RatesAPI } from '../../types';
+
+const apiUrl = process.env.REACT_APP_EXCHANGE_RATES_API;
+const apiKey = process.env.REACT_APP_EXCHANGE_RATES_API_KEY;
 
 type Props = {
   item: Item;
@@ -7,7 +11,43 @@ type Props = {
 
 const ItemCard = (props: Props) => {
   const { item, withReceivedButton } = props;
+  const [isPriceInILS, setIsPriceInILS] = useState(false);
+  const [priceInILS, setPriceInILS] = useState<number>();
+  const [error, setError] = useState<string>();
   const formattedDate = new Date(item.deliveryEstimationDate).toLocaleDateString('en-GB');
+
+  useEffect(() => {
+    if (isPriceInILS) {
+      fetchCurrencyRate();
+    }
+  } , [isPriceInILS])
+
+  const fetchCurrencyRate = async () => {
+    const response = await fetch(`${apiUrl}/latest?access_key=${apiKey}`);
+    const data: RatesAPI = await response.json();
+    if (data.error) {
+      setError('Something went wrong');
+    } else {
+      const ILSinUSD = data.rates.ILS / data.rates.USD;
+      setPriceInILS(Math.floor(ILSinUSD * +item.price));
+    }
+  }
+
+  const changeCurrency = () => {
+    setIsPriceInILS(!isPriceInILS);
+  }
+
+  const renderPrice = () => {
+    if (error) {
+      return (
+        <div className='text-red-600'>{error}</div>
+      )
+    } else if (isPriceInILS && priceInILS) {
+      return `${priceInILS} ₪`;
+    } else {
+      return `${item.price} $`;
+    }
+  }
 
   return (
     <div className="bg-white w-64 h-64 flex flex-col p-3 m-3">
@@ -25,7 +65,12 @@ const ItemCard = (props: Props) => {
               Delivery estimation date: {formattedDate}
             </div>
           </div>
-          <div className="text-green-600 font-semibold">{item.price} $</div>
+          <div
+            className="text-green-600 font-semibold cursor-pointer"
+            onClick={changeCurrency}
+          >
+            {renderPrice()}
+          </div>
         </div>
       </div>
       {withReceivedButton && (
