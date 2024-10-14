@@ -35,9 +35,11 @@ const Layout = () => {
           />
         </div>
       )}
-      <div className="flex">
-        <SideBar />
-        <div>
+      <div className="flex h-screen">
+        {!isHomePage && (
+          <SideBar />
+        )}
+        <div className='w-full'>
           <Outlet context={{ activeTab }} />
         </div>
       </div>

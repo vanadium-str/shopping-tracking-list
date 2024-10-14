@@ -7,6 +7,7 @@ import ErrorPage from './pages/ErrorPage';
 import BoughtItems from './pages/BoughtItems';
 import ReceivedList from './pages/ReceivedList';
 import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         index: true,
-        element: <div>Hello world!</div>,
+        element: <HomePage />,
       },
     ],
   },

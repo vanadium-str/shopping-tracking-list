@@ -24,7 +24,7 @@ const BoughtItems = () => {
         </div>
       );
     case TabNames.Store:
-      return <StoresTable items={items} />;
+      return <StoresTable items={filteredItems} />;
     default:
       return null;
   }

@@ -18,7 +18,7 @@ const ReceivedList = () => {
     <div className="px-6 py-3 flex flex-wrap items-center">
       {activeTab === TabNames.Items &&
         filteredItems.map((item, key) => <ItemCard item={item} key={key} />)}
-      {activeTab === TabNames.Store && <StoresTable items={items} />}
+      {activeTab === TabNames.Store && <StoresTable items={filteredItems} />}
     </div>
   );
 };

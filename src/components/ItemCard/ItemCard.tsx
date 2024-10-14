@@ -59,7 +59,7 @@ const ItemCard = (props: Props) => {
         <div className="flex justify-between items-center">
           <div>
             <div className="text-sm text-slate-500">
-              Amazon
+              {item.store}
             </div>
             <div className="text-xs text-slate-400 mt-0.5 max-w-40">
               Delivery estimation date: {formattedDate}

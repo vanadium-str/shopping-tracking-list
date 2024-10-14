@@ -7,7 +7,7 @@ const SideBar = () => {
   const isReceived = location.pathname === `/${Routes.Received}`;
 
   return (
-    <div className="w-36 h-screen bg-slate-300 flex flex-col items-center pt-10 flex-none">
+    <div className="w-36 bg-slate-300 flex flex-col items-center pt-10 flex-none">
       <ul>
         <li
           className={`
@@ -15,7 +15,7 @@ const SideBar = () => {
           ${isList && 'text-gray-600 border-b-2 border-solid border-blue-500'}
         `}
         >
-          <Link to="/list">Bought Items</Link>
+          <Link to={`/${Routes.List}`}>Bought Items</Link>
         </li>
         <li
           className={`
@@ -23,7 +23,7 @@ const SideBar = () => {
           ${isReceived && 'text-gray-600 border-b-2 border-solid border-blue-500'}
         `}
         >
-          <Link to="/received">Received List</Link>
+          <Link to={`/${Routes.Received}`}>Received List</Link>
         </li>
       </ul>
     </div>
