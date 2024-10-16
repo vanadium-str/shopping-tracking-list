@@ -17,7 +17,7 @@ const BoughtItems = () => {
   switch (activeTab) {
     case TabNames.Items:
       return (
-        <div className="px-6 py-3 flex flex-wrap items-center">
+        <div className="px-0 sm:px-6 py-3 flex flex-wrap items-center">
           {filteredItems.map((item) => (
             <ItemCard key={item.id} item={item} withReceivedButton />
           ))}

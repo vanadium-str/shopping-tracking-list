@@ -25,7 +25,7 @@ const StoresTable = (props: Props) => {
   );
 
   return (
-    <table className="ml-10 mt-5 bg-white">
+    <table className="mx-2 sm:mx-10 mt-5 bg-white">
       <thead>
         <tr>
           <th scope="col">Store name</th>

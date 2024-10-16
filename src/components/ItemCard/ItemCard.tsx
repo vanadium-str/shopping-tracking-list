@@ -66,10 +66,17 @@ const ItemCard = (props: Props) => {
             </div>
           </div>
           <div
-            className="text-green-600 font-semibold cursor-pointer"
+            className="text-green-600 font-semibold cursor-pointer relative group"
             onClick={changeCurrency}
           >
             {renderPrice()}
+            <span
+              className="absolute bottom-full left-1/2 transform -translate-x-1/2 
+              mb-2 w-max bg-gray-800 text-white text-sm rounded-md px-2 py-1 
+              opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              Show in {isPriceInILS ? 'USD' : 'ILS'}
+            </span>
           </div>
         </div>
       </div>

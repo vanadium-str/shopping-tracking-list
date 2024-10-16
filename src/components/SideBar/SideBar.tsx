@@ -7,11 +7,11 @@ const SideBar = () => {
   const isReceived = location.pathname === `/${Routes.Received}`;
 
   return (
-    <div className="w-36 bg-slate-300 flex flex-col items-center pt-10 flex-none">
+    <div className="w-20 sm:w-36 bg-slate-300 flex flex-col items-center pt-10 flex-none">
       <ul>
         <li
           className={`
-          my-4 font-semibold 
+          my-4 font-semibold text-center 
           ${isList && 'text-gray-600 border-b-2 border-solid border-blue-500'}
         `}
         >
@@ -19,7 +19,7 @@ const SideBar = () => {
         </li>
         <li
           className={`
-          my-4 font-semibold 
+          my-4 font-semibold text-center
           ${isReceived && 'text-gray-600 border-b-2 border-solid border-blue-500'}
         `}
         >
