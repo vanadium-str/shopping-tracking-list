@@ -33,8 +33,8 @@ const StoresTable = (props: Props) => {
         </tr>
       </thead>
       <tbody>
-        {aggregatedItems.map((item) => (
-          <tr>
+        {aggregatedItems.map((item, key) => (
+          <tr key={key}>
             <th scope="row">{item.store}</th>
             <td className="text-center">{item.totalSpent} $</td>
           </tr>

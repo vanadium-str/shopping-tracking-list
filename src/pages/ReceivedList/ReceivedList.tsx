@@ -1,11 +1,13 @@
 import { useOutletContext } from 'react-router-dom';
-import items from '../../db/items.json';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 import { TabNames } from '../../types';
 import ItemCard from '../../components/ItemCard';
 import StoresTable from '../../components/StoresTable';
 
 const ReceivedList = () => {
   const { activeTab } = useOutletContext<{ activeTab: TabNames }>();
+  const items = useSelector((state: RootState) => state.items);
 
   const filteredItems = items
     .filter((item) => item.received)

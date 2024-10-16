@@ -8,16 +8,14 @@ import BoughtItems from './pages/BoughtItems';
 import ReceivedList from './pages/ReceivedList';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-
-//localStorage.setItem("items", JSON.stringify(items));
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
@@ -39,6 +37,8 @@ const router = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

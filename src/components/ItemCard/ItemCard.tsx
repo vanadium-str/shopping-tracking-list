@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Item, RatesAPI } from '../../types';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../redux/store';
+import { updateReceivedField } from '../../redux/reducers/itemsSlice';
 
 const apiUrl = process.env.REACT_APP_EXCHANGE_RATES_API;
 const apiKey = process.env.REACT_APP_EXCHANGE_RATES_API_KEY;
@@ -11,6 +14,7 @@ type Props = {
 
 const ItemCard = (props: Props) => {
   const { item, withReceivedButton } = props;
+  const dispatch = useDispatch<AppDispatch>();
   const [isPriceInILS, setIsPriceInILS] = useState(false);
   const [priceInILS, setPriceInILS] = useState<number>();
   const [error, setError] = useState<string>();
@@ -32,6 +36,10 @@ const ItemCard = (props: Props) => {
       setPriceInILS(Math.floor(ILSinUSD * +item.price));
     }
   }
+
+  const handleUpdateReceivedField = () => {
+    dispatch(updateReceivedField(item.id));
+  };
 
   const changeCurrency = () => {
     setIsPriceInILS(!isPriceInILS);
@@ -82,7 +90,10 @@ const ItemCard = (props: Props) => {
       </div>
       {withReceivedButton && (
         <div className="flex justify-end">
-          <button className="bg-blue-500 text-white p-1 rounded-md">
+          <button
+            className="bg-blue-500 text-white p-1 rounded-md"
+            onClick={handleUpdateReceivedField}
+          >
             Received
           </button>
         </div>

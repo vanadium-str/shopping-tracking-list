@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
-import items from '../../db/items.json';
+import { useSelector } from "react-redux";
 import { Routes } from "../../types";
+import { RootState } from "../../redux/store";
 
 const HomePage = () => {
+  const items = useSelector((state: RootState) => state.items);
   const filteredItems = items.filter((item) => !item.received);
+  
   return (
     <div className="flex flex-col items-center justify-center mt-20">
       <h1 className="text-5xl my-10 text-center">Welcome back!</h1>
