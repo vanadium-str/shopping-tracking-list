@@ -21,9 +21,21 @@ const ItemCard = (props: Props) => {
   const formattedDate = new Date(item.deliveryEstimationDate).toLocaleDateString('en-GB');
 
   useEffect(() => {
+    let intervalId: NodeJS.Timeout | null = null;
+
     if (isPriceInILS) {
       fetchCurrencyRate();
+
+      intervalId = setInterval(() => {
+        fetchCurrencyRate();
+      }, 10000);
     }
+
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
   } , [isPriceInILS])
 
   const fetchCurrencyRate = async () => {
