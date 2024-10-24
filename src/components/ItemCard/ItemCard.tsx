@@ -18,6 +18,7 @@ const ItemCard = (props: Props) => {
   const [isPriceInILS, setIsPriceInILS] = useState(false);
   const [priceInILS, setPriceInILS] = useState<number>();
   const [error, setError] = useState<string>();
+  const [loading, setLoading] = useState(false);
   const formattedDate = new Date(item.deliveryEstimationDate).toLocaleDateString('en-GB');
 
   useEffect(() => {
@@ -39,6 +40,7 @@ const ItemCard = (props: Props) => {
   } , [isPriceInILS])
 
   const fetchCurrencyRate = async () => {
+    setLoading(true);
     const response = await fetch(`${apiUrl}/latest?access_key=${apiKey}`);
     const data: RatesAPI = await response.json();
     if (data.error) {
@@ -47,6 +49,7 @@ const ItemCard = (props: Props) => {
       const ILSinUSD = data.rates.ILS / data.rates.USD;
       setPriceInILS(Math.floor(ILSinUSD * +item.price));
     }
+    setLoading(false);
   }
 
   const handleUpdateReceivedField = () => {
@@ -58,7 +61,16 @@ const ItemCard = (props: Props) => {
   }
 
   const renderPrice = () => {
-    if (error) {
+    if (loading) {
+      return (
+        <div className="flex justify-center items-center">
+          <div
+            className="loader border-t-2 border-b-2 border-blue-500
+              border-solid rounded-full w-6 h-6 animate-spin"
+          ></div>
+        </div>
+      )
+    } else if (error) {
       return (
         <div className='text-red-600'>{error}</div>
       )
